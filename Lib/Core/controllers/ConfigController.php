@@ -5,12 +5,12 @@
  * Contains User Defined Paths
  * and other MVC options
  */
-class Configuration
+class Lib_Core_ConfigController
 {
     public $pathLocations = array(
         'app/pages',
-        'lib',
-        'lib/core'
+        'Lib',
+        'Lib/Core'
     );
 
     public function Configuration()

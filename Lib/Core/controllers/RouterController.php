@@ -1,6 +1,6 @@
 <?php
 
-class Router
+class Lib_Core_RouterController
 {
     //This will contain all of the added routes
     protected $routes;

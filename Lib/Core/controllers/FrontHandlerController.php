@@ -1,10 +1,10 @@
 <?php
 
-class FrontHandler
+class Lib_Core_FrontHandlerController
 {
     protected $request;
 
-    public function parseRequest()
+    public function handleRequest()
     {
         $rawUri = $this->currentRequest();
         $splitUri = explode("/", $rawUri);
