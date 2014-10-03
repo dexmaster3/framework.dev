@@ -1,14 +1,24 @@
 <?php
 
-require_once "autoloader.php";
+require "AutoLoader.php";
+
+$autoloadLocations = array(
+    'app/pages',
+    'lib',
+    'lib/core'
+);
+$newPaths = implode(':', $autoloadLocations);
+set_include_path(get_include_path() . PATH_SEPARATOR . $newPaths);
+
+echo get_include_path();
 
 $loader = new AutoLoader();
+$loader->setSearch($autoloadLocations);
+$loader->setSections($moduleSections);
+
 spl_autoload_register(array($loader, 'loadClass'));
 
-
-
 $request_uri = $_SERVER[REQUEST_URI];
-
 
 function parseUri($request_uri)
 {
@@ -38,8 +48,11 @@ function autoloader($class_name)
     }
 }
 
-spl_autoload_register('autoloader');
-
-echo get_include_path();
-
 $test_autoload = new StaticController();
+
+$routertest = new Router();
+
+
+echo $test_autoload->view("my autolaod page view");
+
+echo $routertest->parseRequestPath($_SERVER[REQUEST_URI]);

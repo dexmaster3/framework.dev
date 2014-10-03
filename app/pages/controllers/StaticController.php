@@ -10,6 +10,6 @@ class StaticController
 {
     public function view($page)
     {
-
+        return "Test page $page";
     }
 }
