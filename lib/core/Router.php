@@ -2,6 +2,14 @@
 
 class Router
 {
+    //This will contain all of the added routes
+    protected $routes;
+
+    public function registerRoute($route)
+    {
+        //add to the routes var
+    }
+
     public function parseRequestPath($requestUri)
     {
         $requestUri = ltrim($requestUri, '/');
