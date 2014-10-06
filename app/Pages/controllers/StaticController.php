@@ -6,7 +6,7 @@
  * Time: 2:43 PM
  */
 
-class StaticController
+class Pages_StaticController
 {
     public function view($page)
     {

@@ -1,6 +1,6 @@
 <?php
 
-class Lib_Core_AutoLoaderController
+class Core_AutoLoaderController
 {
     const EXTENSION = '.php';
     private $searchLocations;
@@ -27,6 +27,7 @@ class Lib_Core_AutoLoaderController
         $className = ltrim($className, '\\');
         $directory = explode('_', $className);
         $mvcType = null;
+        $paths = explode(':', get_include_path());
         foreach ($directory as $location) {
             if (stripos($location, 'controller')) {
                 $mvcType = 'controllers';
@@ -42,9 +43,11 @@ class Lib_Core_AutoLoaderController
         if ($mvcType !== null) {
             array_splice($directory, -1, 0, $mvcType);
         }
-        $file = implode(DIRECTORY_SEPARATOR, $directory) . self::EXTENSION;
-        if (is_file($file)) {
-            require $file;
+        foreach ($paths as $path) {
+            $file = $path . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $directory) . self::EXTENSION;
+            if (is_file($file)) {
+                require $file;
+            }
         }
     }
 }

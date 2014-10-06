@@ -1,0 +1,9 @@
+<module name="Blog">
+    <route default="true">
+        <url>/{{module}}/{{controller}}/{{action}}</url>
+    </route>
+    <route default="false">
+        <url>/my/special/url/again</url>
+        <location>Blog_BlogController::index()</location>
+    </route>
+</module>

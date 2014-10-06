@@ -1,6 +1,6 @@
 <?php
 
-class StaticModel
+class Pages_StaticModel
 {
     public $static = "this is my static model information";
 

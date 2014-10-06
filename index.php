@@ -1,3 +1,3 @@
 <?php
 
-require 'Lib/bootstrap.php';
+require 'lib/bootstrap.php';

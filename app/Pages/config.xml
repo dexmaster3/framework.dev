@@ -1,0 +1,9 @@
+<module name="Pages">
+    <default-route>
+        <url>/{{module}}/{{controller}}/{{action}}</url>
+    </default-route>
+    <route>
+        <url>/my/special/url</url>
+        <location>Pages_StaticController::index()</location>
+    </route>
+</module>

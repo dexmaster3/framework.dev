@@ -1,0 +1,7 @@
+{
+    "module": {
+        "name": "Blog",
+        "default-route": {"url": "/{{module}}/{{controller}}/{{action}}"},
+        "route": {"url": "/my/special/route", "location": "Blog_BlogController::index()"}
+    }
+}

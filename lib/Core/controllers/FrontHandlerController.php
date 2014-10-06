@@ -1,22 +1,16 @@
 <?php
 
-class Lib_Core_FrontHandlerController
+class Core_FrontHandlerController
 {
     protected $request;
 
-    public function handleRequest()
+    public function handleRequest($configs)
     {
         $rawUri = $this->currentRequest();
         $splitUri = explode("/", $rawUri);
-        $modules = glob('app/*', GLOB_ONLYDIR);
 
-        foreach ($modules as $module) {
-            $moduleName = substr($module, strpos($module, '/')+1);
-            if ($splitUri[1] === $moduleName) {
-                //handle area for going to module controller
-                return $this->parseController($module, $splitUri);
-            }
-        }
+        $router = new Core_RouterController();
+        $router->findRequestPath($splitUri, $configs);
     }
 
     protected function parseController($module, $splitUri)

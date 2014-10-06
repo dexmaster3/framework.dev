@@ -1,0 +1,7 @@
+{
+    "module": {
+        "name": "Pages",
+        "default-route": {"url": "/{{module}}/{{controller}}/{{action}}"},
+        "route": {"url": "/my/special/route", "location": "Pages_StaticController::index()"}
+    }
+}
