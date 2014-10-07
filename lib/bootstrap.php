@@ -1,14 +1,10 @@
 <?php
 
-require "Core/controllers/AutoLoaderController.php";
-require "Core/controllers/ConfigController.php";
+require "Core/AutoLoader.php";
+require "Core/Config.php";
 
-echo phpinfo();
-$config = new Core_ConfigController();
-$config->pathConfiguration();
-
-$loader = new Core_AutoLoaderController();
+$config = new Core_Config();
+$loader = new Core_AutoLoader();
 spl_autoload_register(array($loader, 'loadClass'));
 
-$frontController = new Core_FrontHandlerController();
-$frontController->handleRequest($config->getModuleConfigs());
+$app = new Core_App($config);

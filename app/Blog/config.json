@@ -1,7 +1,13 @@
 {
     "module": {
         "name": "Blog",
-        "default-route": {"url": "/{{module}}/{{controller}}/{{action}}"},
-        "route": {"url": "/my/special/route", "location": "Blog_BlogController::index()"}
+        "modelsuffix": "Model",
+        "controllersuffix": "Controller",
+        "viewsuffix": "View",
+        "defaultRoute": "{module}/{controller}/{action}",
+        "altModName": "TRag",
+        "route": [
+            {"url": "/my/special/route2a", "method": "GET", "location": "Blog_BlogController", "action" : "show"}
+        ]
     }
 }

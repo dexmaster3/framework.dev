@@ -1,23 +1,7 @@
 <?php
 
-class Core_AutoLoaderController
+class Core_AutoLoader
 {
-    const EXTENSION = '.php';
-    private $searchLocations;
-
-    /**
-     * @param array $searchLocations Contains path locations for autoloading
-     */
-    public function setSearch($searchLocations)
-    {
-        $this->searchLocations = $searchLocations;
-    }
-
-    public function getSearch()
-    {
-        return $this->searchLocations;
-    }
-
     /**
      * Function used by the php spl_autoloader
      * @param object $className Class name to be auto-loaded
@@ -44,7 +28,7 @@ class Core_AutoLoaderController
             array_splice($directory, -1, 0, $mvcType);
         }
         foreach ($paths as $path) {
-            $file = $path . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $directory) . self::EXTENSION;
+            $file = $path . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $directory) . '.php';
             if (is_file($file)) {
                 require $file;
             }

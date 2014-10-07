@@ -1,7 +1,13 @@
 {
     "module": {
         "name": "Pages",
-        "default-route": {"url": "/{{module}}/{{controller}}/{{action}}"},
-        "route": {"url": "/my/special/route", "location": "Pages_StaticController::index()"}
+        "modelsuffix": "Model",
+        "controllersuffix": "Controller",
+        "viewsuffix": "View",
+        "defaultRoute": "{module}/{controller}/{action}",
+        "altModName": "Blog",
+        "route": [
+            {"url": "/my/special/route", "method": "GET", "location": "Pages_StaticController", "action" : "index"}
+        ]
     }
 }

@@ -1,0 +1,11 @@
+{
+    "module": {
+        "name": "Core",
+        "paths": [
+            "app",
+            "lib"
+        ],
+        "modConfigLocation" : "app/*/config.json",
+        "autoloaderExtensions" : ".php"
+    }
+}
