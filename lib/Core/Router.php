@@ -5,7 +5,7 @@ class Core_Router
     private $configs;
     private $request;
 
-    public function Core_Router($configs, $request)
+    public function __construct($configs, $request)
     {
         $this->configs = $configs;
         $this->request = $request;
@@ -18,6 +18,11 @@ class Core_Router
             $path = $this->findAltModuleName();
         }
         return $path;
+    }
+
+    public function getRequestParams()
+    {
+        return $this->request->getQueryString();
     }
 
     public function findExactPath()

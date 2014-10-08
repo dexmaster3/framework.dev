@@ -7,7 +7,8 @@
         "defaultRoute": "{module}/{controller}/{action}",
         "altModName": "Blog",
         "route": [
-            {"url": "/my/special/route", "method": "GET", "location": "Pages_StaticController", "action" : "index"}
+            {"url": "/my/special/route", "method": "GET", "location": "Pages_StaticController", "action" : "index"},
+            {"url": "/my/good/route", "method": "GET", "location": "Pages_StaticController", "action" : "mypage"}
         ]
     }
 }

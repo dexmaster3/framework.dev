@@ -1,9 +1,13 @@
 <?php
 
-class Pages_StaticController
+class Pages_StaticController extends Core_BaseController
 {
-    public function index()
+    public function index($params = array())
     {
-        return "my best static page evr";
+        return $this->make('HomePages_Home', $params);
+    }
+    public function mypage($params = array())
+    {
+        return $this->make('userpages_main', $params);
     }
 }

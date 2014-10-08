@@ -6,15 +6,15 @@ class Core_Request
     private $query;
     private $method;
     private $host;
-    private $parsedUrlzz;
+    private $parsedUrlArray;
 
-    public function Core_Request()
+    public function __construct()
     {
-        $this->rawUrl = $_SERVER[REDIRECT_URL];
-        $this->query = $_SERVER[QUERY_STRING];
-        $this->method = $_SERVER[METHOD];
-        $this->host = $_SERVER[HOST];
-        $this->parsedUrlzz = $this->parseUrl($this->rawUrl);
+        $this->rawUrl = $_SERVER['REDIRECT_URL'];
+        $this->query = $_SERVER['QUERY_STRING'];
+        $this->method = $_SERVER['REQUEST_METHOD'];
+        $this->host = $_SERVER['HTTP_HOST'];
+        $this->parsedUrlArray = $this->parseUrl($this->rawUrl);
     }
 
     public function getRawUrl()
@@ -23,7 +23,8 @@ class Core_Request
     }
     public function getQueryString()
     {
-        return $this->query;
+        parse_str($this->query, $queryArray);
+        return $queryArray;
     }
     public function getMethod()
     {
@@ -35,7 +36,7 @@ class Core_Request
     }
     public function getParsedUrl()
     {
-        return $this->parsedUrlzz;
+        return $this->parsedUrlArray;
     }
 
     private function parseUrl($rawUrl)

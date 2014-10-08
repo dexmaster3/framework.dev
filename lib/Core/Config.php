@@ -9,12 +9,13 @@ class Core_Config
 {
     private $moduleConfigs;
     private $coreConfig;
+    private $paths;
 
-    public function Core_Config()
+    public function __construct()
     {
-        $this->coreConfig = $this->setCoreConfig();
+        $this->setCoreConfig();
         $this->setPaths();
-        $this->moduleConfigs = $this->setModuleConfigs();
+        $this->setModuleConfigs();
     }
 
     public function getCoreConfig()
@@ -25,11 +26,14 @@ class Core_Config
     {
         return $this->moduleConfigs;
     }
+    public function getPaths()
+    {
+        return $this->paths;
+    }
     private function setCoreConfig()
     {
         $config = file_get_contents(__DIR__."/config.json");
-        $parsedConfig = json_decode($config);
-        return $parsedConfig;
+        $this->coreConfig = json_decode($config);
     }
     private function setPaths()
     {
@@ -39,6 +43,7 @@ class Core_Config
         }
         $newPaths = implode(':', $newPaths);
         set_include_path(get_include_path() . PATH_SEPARATOR . $newPaths);
+        $this->paths = get_include_path();
     }
 
     private function setModuleConfigs()
@@ -50,6 +55,6 @@ class Core_Config
             $modContentDecoded = json_decode($modContent);
             array_push($fullConfig, $modContentDecoded);
         }
-        return $fullConfig;
+        $this->moduleConfigs = $fullConfig;
     }
 }

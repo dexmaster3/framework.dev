@@ -4,21 +4,27 @@ class Core_App
 {
     private $router;
     private $request;
+    private $config;
     private $frontController;
 
-    public function Core_App($config)
+    public function __construct($config)
     {
-        $this->request = new Core_Request();
-        $this->router = new Core_Router($config, $this->request);
-        $route = $this->router->getRequestPath();
-
-        $this->frontController = new Core_FrontController();
-        $this->frontController->checkValidRoute($route);
+        $this->config = $config;
     }
 
-    protected function currentRequest()
+    public function beginRequest()
     {
-        $this->request = $_SERVER[REQUEST_URI];
-        return $this->request;
+        $this->request = new Core_Request();
+        $this->router = new Core_Router($this->config, $this->request);
+        $this->frontController = new Core_FrontController();
+
+        $path = $this->router->getRequestPath();
+        $params = $this->router->getRequestParams();
+
+        if($this->frontController->checkValidPath($path)) {
+            $this->frontController->launchController($path, $params);
+        } else {
+            $this->frontController->pathNotFound();
+        }
     }
 }
