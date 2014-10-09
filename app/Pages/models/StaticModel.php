@@ -4,8 +4,8 @@ class Pages_StaticModel
 {
     public $static = "this is my static model information";
 
-    public function getInfo()
+    public function getModel()
     {
-        return $this->static;
+        return array($this->static);
     }
 }

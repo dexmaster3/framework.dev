@@ -20,11 +20,6 @@ class Core_Router
         return $path;
     }
 
-    public function getRequestParams()
-    {
-        return $this->request->getQueryString();
-    }
-
     public function findExactPath()
     {
         foreach ($this->configs->getModuleConfigs() as $config) {

@@ -2,11 +2,12 @@
 
 class Core_View
 {
-    public function make($viewTemplate, $vars = null)
+    //basic rendering of html templates
+    public function make($viewTemplate, $params = null)
     {
         if (is_file($viewTemplate)) {
             $view = file_get_contents($viewTemplate);
-            foreach ($vars as $var => $val) {
+            foreach ($params as $var => $val) {
                 $view = str_replace('{{'.$var.'}}', $val, $view);
             }
             //var replacements
@@ -19,7 +20,7 @@ class Core_View
     {
         $templateLocation = __DIR__;
         $template = str_replace('_', DIRECTORY_SEPARATOR, $template);
-        //ToDo: ...This should have been in memory long ago
+        //ToDo: ...This should have been in memory long ago -> use static config
         $templateLocation .= '/../../app/'. $module . '/views/' . $template . '.php';
         return $templateLocation;
     }

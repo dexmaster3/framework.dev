@@ -8,7 +8,8 @@
         "altModName": "Blog",
         "route": [
             {"url": "/my/special/route", "method": "GET", "location": "Pages_StaticController", "action" : "index"},
-            {"url": "/my/good/route", "method": "GET", "location": "Pages_StaticController", "action" : "mypage"}
+            {"url": "/my/good/route", "method": "GET", "location": "Pages_StaticController", "action" : "mypage"},
+            {"url": "/singler", "method": "GET", "location": "Pages_StaticController", "action": "index"}
         ]
     }
 }

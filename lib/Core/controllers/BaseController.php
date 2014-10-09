@@ -10,7 +10,7 @@ abstract class Core_BaseController
         $this->path = $path;
         $this->params = $params;
     }
-    public function make($viewTemplate, $params)
+    public function make($viewTemplate, $params = null)
     {
         $viewEngine = new Core_View();
         $module = explode('_', get_class($this))[0];

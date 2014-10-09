@@ -21,7 +21,7 @@ class Core_Request
     {
         return $this->rawUrl;
     }
-    public function getQueryString()
+    public function getQueryParams()
     {
         parse_str($this->query, $queryArray);
         return $queryArray;

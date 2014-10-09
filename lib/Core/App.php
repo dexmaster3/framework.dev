@@ -19,7 +19,7 @@ class Core_App
         $this->frontController = new Core_FrontController();
 
         $path = $this->router->getRequestPath();
-        $params = $this->router->getRequestParams();
+        $params = $this->request->getQueryParams();
 
         if($this->frontController->checkValidPath($path)) {
             $this->frontController->launchController($path, $params);
