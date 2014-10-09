@@ -19,6 +19,7 @@ class Core_FrontController
     public function launchController($path, $params)
     {
         $controller = new $path[0]($path, $params);
+        $controller->setView() //Load config find appropriate views
         echo $controller->$path[1]($params);
     }
     public function pathNotFound()

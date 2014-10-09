@@ -1,9 +1,11 @@
-<module name="Pages">
-    <default-route>
-        <url>/{{module}}/{{controller}}/{{action}}</url>
-    </default-route>
-    <route>
-        <url>/my/special/url</url>
-        <location>Pages_StaticController::index()</location>
-    </route>
-</module>
+<layout>
+    <pages_static_noparams>
+        <template>HomePages/Home.php</template>
+    </pages_static_noparams>
+    <pages_static_mypage>
+        <template>HomePages/My.php</template>
+    </pages_static_mypage>
+    <pages_static_ajax>
+        <isAjax>1</isAjax>
+    </pages_static_ajax>
+</layout>

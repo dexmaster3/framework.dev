@@ -4,6 +4,7 @@ abstract class Core_BaseController
 {
     public $path;
     public $params = null;
+    protected $view;
 
     public function __construct($path, $params)
     {

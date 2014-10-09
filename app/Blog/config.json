@@ -7,7 +7,7 @@
         "defaultRoute": "{module}/{controller}/{action}",
         "altModName": "TRag",
         "route": [
-            {"url": "/my/special/route2a", "method": "GET", "location": "Blog_BlogController", "action" : "show"}
+            {"url": "about-my-special-shoe-store", "method": "GET", "location": "Blog_BlogController", "action" : "show", "params" : {"id" : "3"}}
         ]
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<review xmlns="http://plugins.intellij.net/revu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://plugins.intellij.net/revu http://plugins.intellij.net/revu/ns/revu_1_0.xsd" name="Code_Review" status="reviewing" shared="false">
+  <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 15:50:08 -0400" lastUpdatedOn="2014-10-09 15:50:34 -0400"/>
+  <goal></goal>
+  <referential>
+    <priorities/>
+    <tags/>
+    <users>
+      <user displayName="dexter.caffery" login="dexter.caffery" roles="admin,reviewer,author"/>
+      <user displayName="thomas.slade" login="thomas.slade" roles="admin,reviewer,author"/>
+    </users>
+  </referential>
+  <filescope pathPattern="file[*]:*//*"/>
+  <issues>
+    <issue filePath="app/Blog/config.json" summary="This should be controlled at the app level and not per module. Too much overhead to evaluate based on the module especialls when dealing with abstract classes or any base views. Add this to app json." vcsRev="b85d5b391abd7db417148242a85ae2d5d9fb5fb1" lineStart="-1" lineEnd="-1" hash="-1628321091" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 15:55:28 -0400" lastUpdatedOn="2014-10-09 15:55:47 -0400"/>
+    </issue>
+    <issue filePath="app/Blog/config.json" summary="This will eventually be used in the Database and not used in Json." vcsRev="b85d5b391abd7db417148242a85ae2d5d9fb5fb1" localRev="1412884912052" lineStart="9" lineEnd="9" hash="-960619105" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 16:01:52 -0400" lastUpdatedOn="2014-10-09 16:01:52 -0400"/>
+    </issue>
+    <issue filePath="app/Blog/config.xml" summary="Remove file if not used." vcsRev="8ba03f646464db5a8086c13403fa81d94f9f9529" lineStart="0" lineEnd="8" hash="2074830088" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 15:54:06 -0400" lastUpdatedOn="2014-10-09 15:54:06 -0400"/>
+    </issue>
+    <issue filePath="lib/Core/Request.php" summary="Should be updated to grab $_SERVER[&apos;REQUEST_URI&apos;]&#xa;" vcsRev="fecc3813e0d728960ce013b796a610a04fb71c3e" lineStart="12" lineEnd="12" hash="-1157403162" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 16:04:09 -0400" lastUpdatedOn="2014-10-09 16:04:31 -0400"/>
+    </issue>
+    <issue filePath="lib/Core/controllers/BaseController.php" summary="The syntax ()[] is not valid in older versions of php." vcsRev="fecc3813e0d728960ce013b796a610a04fb71c3e" lineStart="16" lineEnd="16" hash="1934910355" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 16:08:40 -0400" lastUpdatedOn="2014-10-09 16:08:40 -0400"/>
+    </issue>
+    <issue filePath="lib/Core/controllers/FrontController.php" summary="Store array value in new variable before invoking new class. Having array[key]() is not valid in older versions of PHP." vcsRev="282028e4254cd176ccfd4b2c4701e8dc53b063a7" lineStart="20" lineEnd="21" hash="-1775505939" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 16:07:53 -0400" lastUpdatedOn="2014-10-09 16:07:53 -0400"/>
+    </issue>
+    <issue filePath="lib/bootstrap.php" summary="Move to Core_AutoLoader&#xa;" vcsRev="282028e4254cd176ccfd4b2c4701e8dc53b063a7" lineStart="7" lineEnd="7" hash="-1897796112" status="to_resolve">
+      <history createdBy="thomas.slade" lastUpdatedBy="thomas.slade" createdOn="2014-10-09 15:51:16 -0400" lastUpdatedOn="2014-10-09 15:51:16 -0400"/>
+    </issue>
+  </issues>
+</review>
